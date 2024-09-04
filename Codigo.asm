@@ -15,7 +15,7 @@ Desplazar:
         brcc    LoopDesplazar  ; Si no hay acarreo, continuar
         rjmp    Desplazar      ; Repetir ciclo
 
-deley:
+deley:                         ;retardo de 1seg
       ldi r18, 21
       ldi r19, 199
 L1:   dec r19

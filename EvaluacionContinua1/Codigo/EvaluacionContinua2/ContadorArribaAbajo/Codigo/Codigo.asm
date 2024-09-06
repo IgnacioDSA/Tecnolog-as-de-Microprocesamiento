@@ -9,14 +9,14 @@ out DDRB, r17
 main_loop:
 
 sbis PIND, PB5
-ldi r18, 0b11110111
+ldi r18, 0b10111111
 out PORTD, r18
 sbic PIND, PB5
-ldi r18, 0b01000001
+ldi r18, 0b01100000
 out PORTD, r18
 sbis PIND, PB5
 sbic PIND, PB5
-ldi r18, 0b00111011
+ldi r18, 0b11011010
 out PORTD, r18
 sbis PIND, PB5
 sbic PIND, PB5

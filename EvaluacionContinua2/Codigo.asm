@@ -19,7 +19,7 @@ SEI ; Activamos las interrupciones globales
 ldi r16, 0b00000011
 OUT EIMSK, r16
 ldi r16, 0x0F
-OUT EICRA, r16
+STS EICRA, r16
 
 loop:
 
@@ -28,6 +28,8 @@ RJMP loop
 RSI_0:
 ldi r17, 0x8E
 OUT PORTB, r17
+RETI
 RSI_1:
 ldi r17, 0xE1
 OUT PORTB, r17
+RETI

@@ -16,8 +16,6 @@ ldi r16, HIGH(RAMEND)
 OUT SPH, r16
 ldi r16, LOW(RAMEND)
 OUT SPL, r16
-ldi r16, 0x01
-push r16
 
 ;activamos los pull-up en los pines de INT0 e INT1
 CBI PORTD, 2 ; Desactivamos resistencia pull-up de las entradas
@@ -27,6 +25,14 @@ ldi r16, 0b00000011
 OUT EIMSK, r16
 ldi r16, 0x0F
 STS EICRA, r16
+
+CargarVal:
+ldi r16, 0x01
+push r16
+inc r16
+cpi r16, 0x08
+brsh loop
+rjmp CargarVal
 
 loop:
 

@@ -8,11 +8,10 @@ RJMP RSI_0 ;
 RJMP RSI_1
 
 Comienzo:
-
-OUT DDRB, 0xFF
-OUT DDRD, (0<<PD2)
-OUT DDRD, (0<<PD3)
-OUT DDRD, (1<<PD6) | (1<<PD7) 
+ldi r16, 0xFF
+OUT DDRB, r16
+ldi r16, 0b11000000
+OUT DDRD, r16 
 ;activamos los pull-up en los pines de INT0 e INT1
 CBI PORTD, 2 ; Desactivamos resistencia pull-up de las entradas
 CBI PORTD, 3 ;

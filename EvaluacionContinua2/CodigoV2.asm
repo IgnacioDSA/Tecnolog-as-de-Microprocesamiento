@@ -47,7 +47,7 @@ ld r0, Z+
 OUT PORTB, r0
 RETI
 RSI_1:
-ld r0, Z+
+ld r0, -Z
 OUT PORTB, r0
 RETI
 

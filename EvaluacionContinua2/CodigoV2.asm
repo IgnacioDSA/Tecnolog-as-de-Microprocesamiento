@@ -3,7 +3,7 @@
 .ORG 0X0000
 RJMP Comienzo
 .ORG 0x0002 ;Habilitamos interrupción int0
-RJMP RSI_0 ; 
+RJMP RSI_0 ;
 .ORG 0x0004 ; Habilitamos interrupción int1
 RJMP RSI_1
 
@@ -11,7 +11,7 @@ Comienzo:
 ldi r16, 0xFF
 OUT DDRB, r16
 ldi r16, 0b11000000
-OUT DDRD, r16 
+OUT DDRD, r16
 ldi r16, HIGH(RAMEND)
 OUT SPH, r16
 ldi r16, LOW(RAMEND)
@@ -29,8 +29,9 @@ OUT EIMSK, r16
 ldi r16, 0x0F
 STS EICRA, r16
 
-CargarVal:
 ldi r16, 0x01
+CargarVal:
+
 push r16
 inc r16
 cpi r16, 0x08
@@ -49,3 +50,5 @@ RSI_1:
 ld r0, Z+
 OUT PORTB, r0
 RETI
+
+              

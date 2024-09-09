@@ -16,6 +16,9 @@ ldi r16, HIGH(RAMEND)
 OUT SPH, r16
 ldi r16, LOW(RAMEND)
 OUT SPL, r16
+ldi r30, low(RAMEND)
+ldi r31, high(RAMEND)
+
 
 ;activamos los pull-up en los pines de INT0 e INT1
 CBI PORTD, 2 ; Desactivamos resistencia pull-up de las entradas
@@ -39,10 +42,10 @@ loop:
 RJMP loop
 
 RSI_0:
-ldi r17, 0x8E
-OUT PORTB, r17
+ld r0, Z+
+OUT PORTB, r0
 RETI
 RSI_1:
-ldi r17, 0xE1
-OUT PORTB, r17
+ld r0, Z+
+OUT PORTB, r0
 RETI

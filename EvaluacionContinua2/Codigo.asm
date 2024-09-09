@@ -1,6 +1,6 @@
 .include "m328pdef.inc"
 
- .ORG 0X0000
+.ORG 0X0000
 RJMP Comienzo
 .ORG 0x0002 ;Habilitamos interrupción int0
 RJMP RSI_0 ; 
@@ -12,7 +12,7 @@ Comienzo:
 OUT DDRB, 0xFF
 OUT DDRD, (0<<PD2)
 OUT DDRD, (0<<PD3)
-OUT DDRD, 
+OUT DDRD, (1<<PD6) | (1<<PD7) 
 SEI ; Activamos las interrupciones globales
 ldi r16, 0b00000011
 OUT EIMSK, r16

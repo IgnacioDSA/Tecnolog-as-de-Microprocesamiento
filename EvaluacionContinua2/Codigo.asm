@@ -1,24 +1,30 @@
 .include "m328pdef.inc"
 
-.org 0x00
-ldi r16, 0xFF
-ldi r17, (0<<PB5)
-out DDRD, r16
-out DDRB, r17
+ .ORG 0X0000
+RJMP Comienzo
+.ORG 0x0002 ;Habilitamos interrupción int0
+RJMP RSI_0 ; 
+.ORG 0x0004 ; Habilitamos interrupción int1
+RJMP RSI_1
 
-main_loop:
+Comienzo:
 
-sbis PIND, PB5
-ldi r18, 0b10111111
-out PORTD, r18
-sbic PIND, PB5
-ldi r18, 0b01100000
-out PORTD, r18
-sbis PIND, PB5
-sbic PIND, PB5
-ldi r18, 0b11011010
-out PORTD, r18
-sbis PIND, PB5
-sbic PIND, PB5
+OUT DDRB, 0xFF
+OUT DDRD, (0<<PD2)
+OUT DDRD, (0<<PD3)
+OUT DDRD, 
+SEI ; Activamos las interrupciones globales
+ldi r16, 0b00000011
+OUT EIMSK, r16
+ldi r16, 0x0F
+OUT EICRA, r16
 
-rjmp main_loop
+loop:
+
+RJMP loop
+
+RSI_0:
+RSI_1:
+
+
+

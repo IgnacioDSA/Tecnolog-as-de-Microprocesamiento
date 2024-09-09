@@ -13,6 +13,9 @@ OUT DDRB, 0xFF
 OUT DDRD, (0<<PD2)
 OUT DDRD, (0<<PD3)
 OUT DDRD, (1<<PD6) | (1<<PD7) 
+;activamos los pull-up en los pines de INT0 e INT1
+CBI PORTD, 2 ; Desactivamos resistencia pull-up de las entradas
+CBI PORTD, 3 ;
 SEI ; Activamos las interrupciones globales
 ldi r16, 0b00000011
 OUT EIMSK, r16
@@ -24,7 +27,8 @@ loop:
 RJMP loop
 
 RSI_0:
+ldi r17, 0x8E
+OUT PORTB, r17
 RSI_1:
-
-
-
+ldi r17, 0xE1
+OUT PORTB, r17

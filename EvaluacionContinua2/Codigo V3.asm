@@ -22,13 +22,13 @@ OUT EIMSK, r16
 ldi r16, 0x0F
 STS EICRA, r16
 
-ldi r17, 0xFF
-ldi r18, 0xFF
-ldi r19, 0xFF
-ldi r20, 0xFF
-ldi r21, 0xFF
-ldi r22, 0xFF
-ldi r23, 0xFF
+ldi r17, 0x00
+ldi r18, 0x01
+ldi r19, 0x02
+ldi r20, 0x03
+ldi r21, 0x04
+ldi r22, 0x05
+ldi r23, 0x06
 
 
 
@@ -83,13 +83,13 @@ Cuatro:
  OUT PORTB, r23
  RJMP loop
 
-delayy:
-	ldi r24, 0xFF ; valor para el primer retardo
-delay:
-	dec r24 ; disminuir el contador del primer retardo
-	brne delay ; repetir hasta que sea 0
-	dec r25 ; disminuir el contador del segundo retardo
-	brne delayy ; repetir hasta que sea 0
+;delayy:
+;	ldi r24, 0xFF ; valor para el primer retardo
+;delay:
+;	dec r24 ; disminuir el contador del primer retardo
+;	brne delay ; repetir hasta que sea 0
+;	dec r25 ; disminuir el contador del segundo retardo
+;	brne delayy ; repetir hasta que sea 0
 
 
 RSI_0:
@@ -97,5 +97,4 @@ RSI_0:
      RETI
 RSI_1:
      dec r17
-     RETI 
- 
+     RETI            

@@ -1,0 +1,2 @@
+No se pudo hacer un codigo funcional para un protoipo fisico, el código v1 es una interrupción simple que funcionó simulado. las V2 Y V3 fueron
+de completar la actividad con interrupciones pero no funcionaron bien del todo.

@@ -94,4 +94,4 @@ L1:
     ;eor r16, (1<<PB0)   ; Cambiamos el estado del LED
     ;out PORTB, r16
 
-    rjmp main
+    rjmp wait

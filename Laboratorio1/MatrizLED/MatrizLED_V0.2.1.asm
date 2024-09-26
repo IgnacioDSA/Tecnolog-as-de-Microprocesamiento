@@ -429,7 +429,7 @@ call     getc
 cpi      r16, 0
 breq     wait 
 
-cpi r16, 49 ; Se tuvo que utilizar esta configuración de saltos "branch if not equal" porque si usabamos breq tiraba error por estar demasiado lejos
+cpi r16, 49 ; Se tuvo que utilizar esta configuraciÃ³n de saltos "branch if not equal" porque si usabamos breq tiraba error por estar demasiado lejos
 brne Opcion2
 rjmp Palabras ; Salta a mostrar el desplazamiento de las palabras si selecciona 1
 

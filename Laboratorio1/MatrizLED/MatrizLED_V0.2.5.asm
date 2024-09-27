@@ -24,9 +24,9 @@ rcall    initUART
 
 ldi r17, 0b11111100      ; Configuramos todos los pines del puerto D como salidas
 
-OUT DDRD, r17       ; Aplicamos la configuración al puerto D
+OUT DDRD, r17       ; Aplicamos la configuraciÃ³n al puerto D
 ldi r17, 0xFF
-OUT DDRB, r17       ; Aplicamos la configuración al puerto B
+OUT DDRB, r17       ; Aplicamos la configuraciÃ³n al puerto B
 
 ; "Bienvenido a la matriz de LEDs" *enter enter*
 
@@ -435,7 +435,7 @@ call     getc
 cpi      r16, 0
 breq     wait 
 
-cpi r16, 49 ; Se tuvo que utilizar esta configuración de saltos "branch if not equal" porque si usabamos breq tiraba error por estar demasiado lejos
+cpi r16, 49 ; Se tuvo que utilizar esta configuraciÃ³n de saltos "branch if not equal" porque si usabamos breq tiraba error por estar demasiado lejos
 brne Opcion2
 rjmp Palabras ; Salta a mostrar el desplazamiento de las palabras si selecciona 1
 

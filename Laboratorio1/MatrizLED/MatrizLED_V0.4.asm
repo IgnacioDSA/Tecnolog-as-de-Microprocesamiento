@@ -25,9 +25,9 @@ rcall    initUART
 
 ldi r17, 0b11111100      ; Configuramos todos los pines del puerto D como salidas
 
-OUT DDRD, r17       ; Aplicamos la configuración al puerto D
+OUT DDRD, r17       ; Aplicamos la configuraciÃ³n al puerto D
 ldi r17, 0xFF
-OUT DDRB, r17       ; Aplicamos la configuración al puerto B
+OUT DDRB, r17       ; Aplicamos la configuraciÃ³n al puerto B
 ldi r17, 0xFF
 out PORTD, r17
 out PORTB, r17
@@ -482,7 +482,7 @@ call     getc
 cpi      r16, 0
 breq     wait 
 
-cpi r16, 49 ; Se tuvo que utilizar esta configuración de saltos "branch if not equal" porque si usabamos breq tiraba error por estar demasiado lejos
+cpi r16, 49 ; Se tuvo que utilizar esta configuraciÃ³n de saltos "branch if not equal" porque si usabamos breq tiraba error por estar demasiado lejos
 brne Opcion2
 rjmp Palabras ; Salta a mostrar el desplazamiento de las palabras si selecciona 1
 
@@ -656,7 +656,7 @@ rcall    putc
 
 RomboMostrar:
 
-; Acordarse que se maneja con tres bits los valores de la posicion de las filas en la matriz, que son CBA (ver fotos del dolang), también hay que definir los 2 puntos faltantes en la matriz que no se pueden usar por la com serial. ver fotos en wpp de pq queda así de raro el rombo.
+; Acordarse que se maneja con tres bits los valores de la posicion de las filas en la matriz, que son CBA (ver fotos del dolang), tambiÃ©n hay que definir los 2 puntos faltantes en la matriz que no se pueden usar por la com serial. ver fotos en wpp de pq queda asÃ­ de raro el rombo.
 
     ; Encender LEDs 1{0x9c,0x0c,0x04,0x00,0x00,0x04,0x0c,0x9c}
 	;parte de coso {0x03,0x07,0x0a,0x0c,0x10,0x16,0x1b,0x1f}
